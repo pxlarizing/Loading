@@ -1,0 +1,457 @@
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
+
+-- Instances: 36 | Scripts: 5 | Modules: 0 | Tags: 0
+local G2L = {};
+
+-- StarterGui.LoadingScreen
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["Name"] = [[LoadingScreen]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+
+-- StarterGui.LoadingScreen.Background
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 100;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(7, 7, 7);
+G2L["2"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(3, 3, 3);
+G2L["2"]["Name"] = [[Background]];
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground
+G2L["3"] = Instance.new("Frame", G2L["2"]);
+G2L["3"]["ZIndex"] = 15;
+G2L["3"]["BorderSizePixel"] = 0;
+G2L["3"]["BackgroundColor3"] = Color3.fromRGB(7, 7, 7);
+G2L["3"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["3"]["Size"] = UDim2.new(0, 400, 0, 35);
+G2L["3"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3"]["Name"] = [[LoadingBarBackground]];
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.UIStroke
+G2L["4"] = Instance.new("UIStroke", G2L["3"]);
+G2L["4"]["Transparency"] = 0.77;
+G2L["4"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["4"]["Thickness"] = 1.2;
+G2L["4"]["Color"] = Color3.fromRGB(192, 192, 192);
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.UICorner
+G2L["5"] = Instance.new("UICorner", G2L["3"]);
+G2L["5"]["CornerRadius"] = UDim.new(0, 4);
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.UserImage
+G2L["6"] = Instance.new("ImageLabel", G2L["3"]);
+G2L["6"]["ZIndex"] = 15;
+G2L["6"]["ScaleType"] = Enum.ScaleType.Fit;
+G2L["6"]["ImageColor3"] = Color3.fromRGB(201, 201, 201);
+G2L["6"]["Image"] = [[rbxassetid://4370335364]];
+G2L["6"]["Size"] = UDim2.new(0, 30, 0, 30);
+G2L["6"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["6"]["BackgroundTransparency"] = 1;
+G2L["6"]["Name"] = [[UserImage]];
+G2L["6"]["Position"] = UDim2.new(0, 0, 1.31429, 0);
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.UserImage.Username
+G2L["7"] = Instance.new("TextLabel", G2L["6"]);
+G2L["7"]["TextWrapped"] = true;
+G2L["7"]["BorderSizePixel"] = 0;
+G2L["7"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["7"]["TextTransparency"] = 0.35;
+G2L["7"]["TextScaled"] = true;
+G2L["7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7"]["TextSize"] = 14;
+G2L["7"]["FontFace"] = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["7"]["TextColor3"] = Color3.fromRGB(201, 201, 201);
+G2L["7"]["BackgroundTransparency"] = 1;
+G2L["7"]["Size"] = UDim2.new(0, 358, 0, 30);
+G2L["7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7"]["Text"] = [[]];
+G2L["7"]["Name"] = [[Username]];
+G2L["7"]["Position"] = UDim2.new(1.4, 0, 0, 0);
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.UserImage.Username.handleUsername
+G2L["8"] = Instance.new("LocalScript", G2L["7"]);
+G2L["8"]["Name"] = [[handleUsername]];
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.Port1Image
+G2L["9"] = Instance.new("ImageLabel", G2L["3"]);
+G2L["9"]["ZIndex"] = 15;
+G2L["9"]["ScaleType"] = Enum.ScaleType.Fit;
+G2L["9"]["ImageTransparency"] = 1;
+G2L["9"]["ImageColor3"] = Color3.fromRGB(201, 201, 201);
+G2L["9"]["Image"] = [[rbxassetid://3610245066]];
+G2L["9"]["Size"] = UDim2.new(0, 30, 0, 30);
+G2L["9"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["9"]["BackgroundTransparency"] = 1;
+G2L["9"]["Name"] = [[Port1Image]];
+G2L["9"]["Position"] = UDim2.new(0.015, 0, 0.05714, 0);
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.Port1Image.UIGradient
+G2L["a"] = Instance.new("UIGradient", G2L["9"]);
+G2L["a"]["Rotation"] = -92;
+G2L["a"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 0.30625),NumberSequenceKeypoint.new(0.303, 0.10625),NumberSequenceKeypoint.new(1.000, 0)};
+G2L["a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(172, 172, 172)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(255, 255, 255))};
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.Port0Image
+G2L["b"] = Instance.new("ImageLabel", G2L["3"]);
+G2L["b"]["ZIndex"] = 15;
+G2L["b"]["ScaleType"] = Enum.ScaleType.Fit;
+G2L["b"]["ImageTransparency"] = 1;
+G2L["b"]["ImageColor3"] = Color3.fromRGB(201, 201, 201);
+G2L["b"]["Image"] = [[rbxassetid://3610245066]];
+G2L["b"]["Size"] = UDim2.new(0, 30, 0, 30);
+G2L["b"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["b"]["BackgroundTransparency"] = 1;
+G2L["b"]["Name"] = [[Port0Image]];
+G2L["b"]["Position"] = UDim2.new(0.9075, 0, 0.05714, 0);
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.Port0Image.UIGradient
+G2L["c"] = Instance.new("UIGradient", G2L["b"]);
+G2L["c"]["Rotation"] = -92;
+G2L["c"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 0.30625),NumberSequenceKeypoint.new(0.303, 0.10625),NumberSequenceKeypoint.new(1.000, 0)};
+G2L["c"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(172, 172, 172)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(255, 255, 255))};
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.LoadingBar
+G2L["d"] = Instance.new("ImageLabel", G2L["3"]);
+G2L["d"]["ZIndex"] = 15;
+G2L["d"]["ScaleType"] = Enum.ScaleType.Fit;
+G2L["d"]["ImageColor3"] = Color3.fromRGB(201, 201, 201);
+G2L["d"]["Image"] = [[rbxassetid://4400698963]];
+G2L["d"]["Size"] = UDim2.new(0, 30, 0, 30);
+G2L["d"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["d"]["BackgroundTransparency"] = 1;
+G2L["d"]["Name"] = [[LoadingBar]];
+G2L["d"]["Position"] = UDim2.new(0.4625, 0, 0.05714, 0);
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.LoadingBar.UIGradient
+G2L["e"] = Instance.new("UIGradient", G2L["d"]);
+G2L["e"]["Rotation"] = -92;
+G2L["e"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 0.30625),NumberSequenceKeypoint.new(0.303, 0.10625),NumberSequenceKeypoint.new(1.000, 0)};
+G2L["e"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(172, 172, 172)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(255, 255, 255))};
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.LoadingBar.StyleLink
+G2L["f"] = Instance.new("StyleLink", G2L["d"]);
+
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.LogsImage
+G2L["10"] = Instance.new("ImageLabel", G2L["3"]);
+G2L["10"]["ZIndex"] = 15;
+G2L["10"]["ScaleType"] = Enum.ScaleType.Fit;
+G2L["10"]["ImageColor3"] = Color3.fromRGB(201, 201, 201);
+G2L["10"]["Image"] = [[rbxassetid://4384394237]];
+G2L["10"]["Size"] = UDim2.new(0, 30, 0, 30);
+G2L["10"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["10"]["BackgroundTransparency"] = 1;
+G2L["10"]["Name"] = [[LogsImage]];
+G2L["10"]["Position"] = UDim2.new(0, 0, 2.17143, 0);
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.LogsImage.Log
+G2L["11"] = Instance.new("TextLabel", G2L["10"]);
+G2L["11"]["TextWrapped"] = true;
+G2L["11"]["BorderSizePixel"] = 0;
+G2L["11"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["11"]["TextTransparency"] = 0.35;
+G2L["11"]["TextScaled"] = true;
+G2L["11"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["11"]["TextSize"] = 14;
+G2L["11"]["FontFace"] = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["11"]["TextColor3"] = Color3.fromRGB(201, 201, 201);
+G2L["11"]["BackgroundTransparency"] = 1;
+G2L["11"]["Size"] = UDim2.new(0, 358, 0, 30);
+G2L["11"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["11"]["Text"] = [[]];
+G2L["11"]["Name"] = [[Log]];
+G2L["11"]["Position"] = UDim2.new(1.4, 0, 0, 0);
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.LogsImage.Log.SmoothChange
+G2L["12"] = Instance.new("LocalScript", G2L["11"]);
+G2L["12"]["Name"] = [[SmoothChange]];
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.LogsImage.LogLoader
+G2L["13"] = Instance.new("Script", G2L["10"]);
+G2L["13"]["Name"] = [[LogLoader]];
+-- Attributes
+G2L["13"]:SetAttribute([[Constants]], [[17216405622]]);
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.PlayerIcon
+G2L["14"] = Instance.new("ImageLabel", G2L["3"]);
+G2L["14"]["BorderSizePixel"] = 0;
+G2L["14"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["14"]["Size"] = UDim2.new(0, 46, 0, 46);
+G2L["14"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["14"]["BackgroundTransparency"] = 1;
+G2L["14"]["Name"] = [[PlayerIcon]];
+G2L["14"]["Position"] = UDim2.new(0.44068, 0, -2.11429, 0);
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.PlayerIcon.UIGradient
+G2L["15"] = Instance.new("UIGradient", G2L["14"]);
+G2L["15"]["Rotation"] = 90;
+G2L["15"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 1),NumberSequenceKeypoint.new(0.047, 0.45),NumberSequenceKeypoint.new(0.133, 0.25625),NumberSequenceKeypoint.new(0.465, 0),NumberSequenceKeypoint.new(0.656, 0),NumberSequenceKeypoint.new(0.875, 0.66875),NumberSequenceKeypoint.new(0.999, 1),NumberSequenceKeypoint.new(1.000, 1)};
+G2L["15"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(160, 160, 160)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(255, 255, 255))};
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.PlayerIcon.UIStroke
+G2L["16"] = Instance.new("UIStroke", G2L["14"]);
+G2L["16"]["Transparency"] = 0.77;
+G2L["16"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["16"]["Thickness"] = 1.2;
+G2L["16"]["Color"] = Color3.fromRGB(192, 192, 192);
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.PlayerIcon.UICorner
+G2L["17"] = Instance.new("UICorner", G2L["14"]);
+G2L["17"]["CornerRadius"] = UDim.new(1, 0);
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.PlayerIcon.Pattern
+G2L["18"] = Instance.new("ImageLabel", G2L["14"]);
+G2L["18"]["ZIndex"] = 5;
+G2L["18"]["SliceCenter"] = Rect.new(0, 256, 0, 256);
+G2L["18"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["18"]["ScaleType"] = Enum.ScaleType.Tile;
+G2L["18"]["ImageTransparency"] = 0.84;
+G2L["18"]["ImageColor3"] = Color3.fromRGB(43, 43, 43);
+G2L["18"]["Image"] = [[rbxassetid://300134974]];
+G2L["18"]["TileSize"] = UDim2.new(0, 30, 0, 30);
+G2L["18"]["Size"] = UDim2.new(0, 46, 0, 45);
+G2L["18"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["18"]["BackgroundTransparency"] = 1;
+G2L["18"]["Name"] = [[Pattern]];
+G2L["18"]["Position"] = UDim2.new(0, 0, 0, 0);
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.PlayerIcon.Pattern.UICorner
+G2L["19"] = Instance.new("UICorner", G2L["18"]);
+G2L["19"]["CornerRadius"] = UDim.new(1, 0);
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.PlayerIcon.Pattern.UIGradient
+G2L["1a"] = Instance.new("UIGradient", G2L["18"]);
+G2L["1a"]["Rotation"] = 90;
+G2L["1a"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 1),NumberSequenceKeypoint.new(0.047, 0.45),NumberSequenceKeypoint.new(0.133, 0.25625),NumberSequenceKeypoint.new(0.465, 0),NumberSequenceKeypoint.new(0.656, 0),NumberSequenceKeypoint.new(0.875, 0.66875),NumberSequenceKeypoint.new(0.999, 1),NumberSequenceKeypoint.new(1.000, 1)};
+G2L["1a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(160, 160, 160)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(255, 255, 255))};
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.PlayerIcon.LocalScript
+G2L["1b"] = Instance.new("LocalScript", G2L["14"]);
+
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.Pattern
+G2L["1c"] = Instance.new("ImageLabel", G2L["3"]);
+G2L["1c"]["ZIndex"] = 5;
+G2L["1c"]["SliceCenter"] = Rect.new(0, 256, 0, 256);
+G2L["1c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1c"]["ScaleType"] = Enum.ScaleType.Tile;
+G2L["1c"]["ImageTransparency"] = 0.84;
+G2L["1c"]["ImageColor3"] = Color3.fromRGB(43, 43, 43);
+G2L["1c"]["Image"] = [[rbxassetid://300134974]];
+G2L["1c"]["TileSize"] = UDim2.new(0, 30, 0, 30);
+G2L["1c"]["Size"] = UDim2.new(0, 400, 0, 35);
+G2L["1c"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["1c"]["BackgroundTransparency"] = 1;
+G2L["1c"]["Name"] = [[Pattern]];
+G2L["1c"]["Position"] = UDim2.new(0, 0, -0.01429, 0);
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.ImageLabel
+G2L["1d"] = Instance.new("ImageLabel", G2L["3"]);
+G2L["1d"]["BorderSizePixel"] = 0;
+G2L["1d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1d"]["Image"] = [[http://www.roblox.com/asset/?id=77107119977954]];
+G2L["1d"]["Size"] = UDim2.new(0, 284, 0, 100);
+G2L["1d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1d"]["BackgroundTransparency"] = 1;
+G2L["1d"]["Position"] = UDim2.new(0.1852, 0, -5.81827, 0);
+
+
+-- StarterGui.LoadingScreen.Background.Pattern
+G2L["1e"] = Instance.new("ImageLabel", G2L["2"]);
+G2L["1e"]["ZIndex"] = 9;
+G2L["1e"]["BorderSizePixel"] = 0;
+G2L["1e"]["SliceCenter"] = Rect.new(0, 256, 0, 256);
+G2L["1e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1e"]["ScaleType"] = Enum.ScaleType.Tile;
+G2L["1e"]["ImageTransparency"] = 0.45;
+G2L["1e"]["Image"] = [[rbxassetid://2151741365]];
+G2L["1e"]["TileSize"] = UDim2.new(0, 250, 0, 250);
+G2L["1e"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["1e"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["1e"]["BackgroundTransparency"] = 1;
+G2L["1e"]["Name"] = [[Pattern]];
+
+
+-- StarterGui.LoadingScreen.Background.Pattern.UIGradient
+G2L["1f"] = Instance.new("UIGradient", G2L["1e"]);
+G2L["1f"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 1),NumberSequenceKeypoint.new(0.153, 0.56875),NumberSequenceKeypoint.new(0.298, 0.7625),NumberSequenceKeypoint.new(0.516, 0.56875),NumberSequenceKeypoint.new(0.647, 0.75),NumberSequenceKeypoint.new(0.757, 0.55625),NumberSequenceKeypoint.new(1.000, 1)};
+G2L["1f"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(160, 160, 160)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(255, 255, 255))};
+
+
+-- StarterGui.LoadingScreen.Background.Pattern.UIGradient.LocalScript
+G2L["20"] = Instance.new("LocalScript", G2L["1f"]);
+
+
+
+-- StarterGui.LoadingScreen.AnimationFrame
+G2L["21"] = Instance.new("Frame", G2L["1"]);
+G2L["21"]["BorderSizePixel"] = 100;
+G2L["21"]["BackgroundColor3"] = Color3.fromRGB(7, 7, 7);
+G2L["21"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["21"]["BorderColor3"] = Color3.fromRGB(7, 7, 7);
+G2L["21"]["Name"] = [[AnimationFrame]];
+G2L["21"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.LoadingScreen.Main
+G2L["22"] = Instance.new("LocalScript", G2L["1"]);
+G2L["22"]["Name"] = [[Main]];
+
+
+-- StarterGui.LoadingScreen.Main.Reached
+G2L["23"] = Instance.new("Sound", G2L["22"]);
+G2L["23"]["Name"] = [[Reached]];
+G2L["23"]["SoundId"] = [[rbxassetid://320118345]];
+
+
+-- StarterGui.LoadingScreen.Main.Loaded
+G2L["24"] = Instance.new("Sound", G2L["22"]);
+G2L["24"]["Name"] = [[Loaded]];
+G2L["24"]["SoundId"] = [[rbxassetid://7273189708]];
+
+
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.UserImage.Username.handleUsername
+local function C_8()
+local script = G2L["8"];
+	repeat task.wait() until game:IsLoaded()
+	script.Parent.Text = '@' .. game:GetService("Players").LocalPlayer.Name
+end;
+task.spawn(C_8);
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.LogsImage.Log.SmoothChange
+local function C_12()
+local script = G2L["12"];
+	script.Parent:GetPropertyChangedSignal("Text"):Connect(function()
+		script.Parent.TextTransparency = 1
+		
+		game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(.25), {TextTransparency = 0}):Play()
+		task.wait(.25)
+		game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(.25), {TextTransparency = .35}):Play()
+		
+	end)
+end;
+task.spawn(C_12);
+-- StarterGui.LoadingScreen.Background.LoadingBarBackground.PlayerIcon.LocalScript
+local function C_1b()
+local script = G2L["1b"];
+	local userId = game:GetService("Players").LocalPlayer.UserId
+	local thumbType = Enum.ThumbnailType.HeadShot
+	local thumbSize = Enum.ThumbnailSize.Size420x420
+	
+	local content, isReady = game:GetService("Players"):GetUserThumbnailAsync(userId, thumbType, thumbSize) 
+	script.Parent.Image = (isReady and content) or "rbxassetid://0"
+	
+end;
+task.spawn(C_1b);
+-- StarterGui.LoadingScreen.Background.Pattern.UIGradient.LocalScript
+local function C_20()
+local script = G2L["20"];
+	while task.wait(2) do
+		game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(1), {Rotation = 180}):Play()
+		task.wait(1)
+		game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(1), {Rotation = -180}):Play()
+	end
+end;
+task.spawn(C_20);
+-- StarterGui.LoadingScreen.Main
+local function C_22()
+local script = G2L["22"];
+	local this = script.Parent
+	
+	local TweenService = game:GetService("TweenService");
+	local ReplicatedFirst = game:GetService('ReplicatedFirst')
+	local ContentProvider = game:GetService("ContentProvider")
+	
+	local Assets = game:GetDescendants()
+	local Player = game:GetService("Players").LocalPlayer
+	
+	local deltaWalkSpeed = Player.Character:WaitForChild("Humanoid").WalkSpeed
+	local deltaJumpHeight = Player.Character:WaitForChild("Humanoid").JumpHeight
+	
+	ReplicatedFirst:RemoveDefaultLoadingScreen()
+	repeat task.wait() until game:IsLoaded()
+	
+	Player.Character:WaitForChild("Humanoid").WalkSpeed = 0;
+	Player.Character:WaitForChild("Humanoid").JumpHeight = 0;
+	
+	local deltaPosition = this.Background.LoadingBarBackground.LoadingBar.Position
+	task.spawn(function()
+		while task.wait(math.pi) do
+			TweenService:Create(this.Background.LoadingBarBackground.LoadingBar, TweenInfo.new(.65), {Position = this.Background.LoadingBarBackground.Port0Image.Position}):Play()
+			TweenService:Create(this.Background.LoadingBarBackground.LoadingBar, TweenInfo.new(1), {Rotation = 90}):Play()
+			TweenService:Create(this.Background.LoadingBarBackground.Port0Image, TweenInfo.new(1), {ImageTransparency = .5}):Play()
+			TweenService:Create(this.Background.LoadingBarBackground.Port0Image, TweenInfo.new(2), {ImageColor3 = Color3.fromRGB(30, 165, 30)}):Play()
+			task.wait(1)
+			script.Reached:Play()
+			TweenService:Create(this.Background.LoadingBarBackground.Port0Image, TweenInfo.new(1), {ImageColor3 = Color3.fromRGB(200, 200, 200)}):Play()
+			TweenService:Create(this.Background.LoadingBarBackground.Port0Image, TweenInfo.new(1), {ImageTransparency = 1}):Play()
+			TweenService:Create(this.Background.LoadingBarBackground.LoadingBar, TweenInfo.new(1), {Position = deltaPosition}):Play()
+			TweenService:Create(this.Background.LoadingBarBackground.LoadingBar, TweenInfo.new(1), {Rotation = 0}):Play()
+			task.wait(math.pi)
+			TweenService:Create(this.Background.LoadingBarBackground.LoadingBar, TweenInfo.new(.65), {Position = this.Background.LoadingBarBackground.Port1Image.Position}):Play()
+			TweenService:Create(this.Background.LoadingBarBackground.LoadingBar, TweenInfo.new(1), {Rotation = -90}):Play()
+			TweenService:Create(this.Background.LoadingBarBackground.Port1Image, TweenInfo.new(1), {ImageTransparency = .5}):Play()
+			TweenService:Create(this.Background.LoadingBarBackground.Port1Image, TweenInfo.new(2), {ImageColor3 = Color3.fromRGB(30, 165, 30)}):Play()
+			task.wait(1)
+			script.Reached:Play()
+			
+			TweenService:Create(this.Background.LoadingBarBackground.Port1Image, TweenInfo.new(1), {ImageColor3 = Color3.fromRGB(200, 200, 200)}):Play()
+			TweenService:Create(this.Background.LoadingBarBackground.Port1Image, TweenInfo.new(1), {ImageTransparency = 1}):Play()
+			TweenService:Create(this.Background.LoadingBarBackground.LoadingBar, TweenInfo.new(1), {Position = deltaPosition}):Play()
+			TweenService:Create(this.Background.LoadingBarBackground.LoadingBar, TweenInfo.new(1), {Rotation = 0}):Play()
+		end
+	end)
+	
+	for file = 1, #Assets do
+		local asset = Assets[file]
+	
+		ContentProvider:PreloadAsync({asset})
+		this.Background.LoadingBarBackground.FileImage.Files.Text = file
+		this.Background.LoadingBarBackground.LogsImage.Log.Text = asset.Name
+	end
+	
+	TweenService:Create(script.Parent.AnimationFrame, TweenInfo.new(math.pi), {Transparency = 0}):Play()
+	task.wait(math.pi)
+	script.Parent.Background:Destroy()
+	TweenService:Create(script.Parent.AnimationFrame, TweenInfo.new(math.pi), {Transparency = 1}):Play()
+	script.Loaded:Play()
+	Player.Character:WaitForChild("Humanoid").WalkSpeed = deltaWalkSpeed;
+	Player.Character:WaitForChild("Humanoid").JumpHeight = deltaJumpHeight;
+end;
+task.spawn(C_22);
+
+return G2L["1"], require;
